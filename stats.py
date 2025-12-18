@@ -12,6 +12,18 @@ def letter_count(text):
             characters[char] += 1
         else:
             characters[char] = 1
-        characters.sort(reverse=True, key=sort_on)
+       
     return characters
+
+def sort_on(num):
+    return num["num"]
+
+def sort_dict(num):
+    number = []
+    for ch,count in num.items():
+        n = {"char": ch, "num": count}
+        number.append(n)
+    number.sort(reverse=True, key=sort_on)
+    return number
+
 
